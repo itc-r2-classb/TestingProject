@@ -6,7 +6,7 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-public class Mod_1_LIMITED {
+public class Mob_1_LIMITED {
 
 	public static void main(String[] args) {
 		/*
@@ -14,7 +14,7 @@ public class Mod_1_LIMITED {
 		 * メソッドの使用禁止
 		 * boolean型の使用禁止
 		 * Map, Listが必須
-		 * UIは前作を引き継ぐ(なるべく)
+		 * 見た目や操作感は前作を引き継ぐ(なるべく)
 		 * ■□■□■□■□■□■□■□■
 		 * ■□■□■□未完成□■□■□■
 		 * ■□■□■□■□■□■□■□■

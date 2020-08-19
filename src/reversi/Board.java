@@ -42,8 +42,9 @@ public class Board {
 		// 上
 		List<Location> list = new ArrayList<>(), tmp = new ArrayList<>();
 		boolean copy = false;
-		for (cy = y; cy >= 0; cy--) {
-			if (!get(x, cy).equals(Stone.NONE) && !get(x, cy).equals(Stone.NOT_PLACE)) {
+		for (cy = y-1; cy >= 0; cy--) {
+//			System.out.println((x+1) + ", " + (cy+1) + ": " + get(x, cy));
+			if (!get(x, cy).equals(Stone.NONE) && !get(x, cy).equals(Stone.NOT_PLACE) && !get(x, cy).equals(stone)) {
 				tmp.add(new Location(x, cy));
 			}
 			if (get(x, cy).equals(stone)) {
@@ -57,8 +58,8 @@ public class Board {
 		tmp.clear();
 		// 下
 		copy = false;
-		for (cy = y; cy < maxY; cy++) {
-			if (!get(x, cy).equals(Stone.NONE) && !get(x, cy).equals(Stone.NOT_PLACE)) {
+		for (cy = y+1; cy < maxY; cy++) {
+			if (!get(x, cy).equals(Stone.NONE) && !get(x, cy).equals(Stone.NOT_PLACE) && !get(x, cy).equals(stone)) {
 				tmp.add(new Location(x, cy));
 			}
 			if (get(x, cy).equals(stone)) {
@@ -73,9 +74,8 @@ public class Board {
 		// 右
 		copy = false;
 		cy = y;
-		for (cx = x; cx < maxX; cx++) {
-
-			if (!get(cx, cy).equals(Stone.NONE) && !get(cx, cy).equals(Stone.NOT_PLACE)) {
+		for (cx = x+1; cx < maxX; cx++) {
+			if (!get(cx, cy).equals(Stone.NONE) && !get(cx, cy).equals(Stone.NOT_PLACE) && !get(cx, cy).equals(stone)) {
 				tmp.add(new Location(cx, cy));
 			}
 			if (get(cx, cy).equals(stone)) {
@@ -90,8 +90,8 @@ public class Board {
 		// 左
 		copy = false;
 		cy = y;
-		for (cx = x; cx >= 0; cx--) {
-			if (!get(cx, cy).equals(Stone.NONE) && !get(cx, cy).equals(Stone.NOT_PLACE)) {
+		for (cx = x-1; cx >= 0; cx--) {
+			if (!get(cx, cy).equals(Stone.NONE) && !get(cx, cy).equals(Stone.NOT_PLACE) && !get(cx, cy).equals(stone)) {
 				tmp.add(new Location(cx, cy));
 			}
 			if (get(cx, cy).equals(stone)) {
@@ -105,10 +105,10 @@ public class Board {
 		tmp.clear();
 		// 斜め左上
 		copy = false;
-		for (int i = 0; i <= Math.min(y, x); i++) {
+		for (int i = 1; i <= Math.min(y, x); i++) {
 			cx = x - i;
 			cy = y - i;
-			if (!get(cx, cy).equals(Stone.NONE) && !get(cx, cy).equals(Stone.NOT_PLACE)) {
+			if (!get(cx, cy).equals(Stone.NONE) && !get(cx, cy).equals(Stone.NOT_PLACE) && !get(cx, cy).equals(stone)) {
 				tmp.add(new Location(cx, cy));
 			}
 			if (get(cx, cy).equals(stone)) {
@@ -122,10 +122,10 @@ public class Board {
 		tmp.clear();
 		// 斜め右上
 		copy = false;
-		for (int i = 0; i <= Math.min(y, x); i++) {
+		for (int i = 1; i <= Math.min(y, maxX); i++) {
 			cx = x + i;
 			cy = y - i;
-			if (!get(cx, cy).equals(Stone.NONE) && !get(cx, cy).equals(Stone.NOT_PLACE)) {
+			if (!get(cx, cy).equals(Stone.NONE) && !get(cx, cy).equals(Stone.NOT_PLACE) && !get(cx, cy).equals(stone)) {
 				tmp.add(new Location(cx, cy));
 			}
 			if (get(cx, cy).equals(stone)) {
@@ -139,12 +139,14 @@ public class Board {
 		tmp.clear();
 		// 斜め左下
 		copy = false;
-		for (int i = 0; i <= Math.min(y, x); i++) {
+		for (int i = 1; i <= Math.min(maxY, x); i++) {
 			cx = x - i;
 			cy = y + i;
-			if (!get(cx, cy).equals(Stone.NONE) && !get(cx, cy).equals(Stone.NOT_PLACE)) {
+			System.out.println((cx+1) + ", " + (cy+1) + ": " + get(cx, cy));
+			if (!get(cx, cy).equals(Stone.NONE) && !get(cx, cy).equals(Stone.NOT_PLACE) && !get(cx, cy).equals(stone)) {
 				tmp.add(new Location(cx, cy));
 			}
+			System.out.println((cx+1) + ", " + (cy+1) + ": " + get(cx, cy) + " == " + stone);
 			if (get(cx, cy).equals(stone)) {
 				copy = true;
 				break;
@@ -156,10 +158,10 @@ public class Board {
 		tmp.clear();
 		// 斜め右下
 		copy = false;
-		for (int i = 0; i <= Math.min(y, x); i++) {
+		for (int i = 1; i <= Math.min(maxY, maxX); i++) {
 			cx = x + i;
 			cy = y + i;
-			if (!get(cx, cy).equals(Stone.NONE) && !get(cx, cy).equals(Stone.NOT_PLACE)) {
+			if (!get(cx, cy).equals(Stone.NONE) && !get(cx, cy).equals(Stone.NOT_PLACE) && !get(cx, cy).equals(stone)) {
 				tmp.add(new Location(cx, cy));
 			}
 			if (get(cx, cy).equals(stone)) {

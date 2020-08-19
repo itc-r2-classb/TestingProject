@@ -7,7 +7,7 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-public class Mod_1 {
+public class Mob_1 {
 	
 	public static void main(String[] args) {
 		int suica = charge(), input = 0, currentStation = 2;
