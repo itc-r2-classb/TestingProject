@@ -6,7 +6,7 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-public class AX {
+public class Utility {
 	public static void printSikiri1() {
 		System.out.println("========================================================");
 	}

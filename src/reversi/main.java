@@ -1,6 +1,6 @@
 package reversi;
 
-import lib.AX;
+import lib.Utility;
 
 public class main {
 	private static final Stone w = Stone.WHITE, b = Stone.BLACK, n = Stone.NONE;
@@ -9,9 +9,9 @@ public class main {
 
 		String ver = "1.0";
 
-		AX.printSikiri1();
+		Utility.printSikiri1();
 		System.out.println("   Reversi Ver."+ver);
-		AX.printSikiri1();
+		Utility.printSikiri1();
 
 		int input = 0;
 		Board board = new Board(new Stone[][] {
@@ -30,7 +30,7 @@ public class main {
 			// 描画
 			System.out.print("  ");
 			for(int x = 0; x < board.maxX;x++) {
-				System.out.print(AX.spacerLeft(String.valueOf(x + 1), 1));
+				System.out.print(Utility.spacerLeft(String.valueOf(x + 1), 1));
 			}
 			System.out.println();
 			for(int y = 0; y < board.getYLength();y++) {
@@ -45,7 +45,7 @@ public class main {
 			
 			int in_x = 0, in_y = 0;
 			while(!ok) {
-				String input_str = AX.inputString(turn.getName()+"のターン: 設置座標[X Y]");
+				String input_str = Utility.inputString(turn.getName()+"のターン: 設置座標[X Y]");
 				String[] input_arr = input_str.split(" ");
 				if( input_arr.length < 2 ) {
 					System.out.println("値が足りません");
