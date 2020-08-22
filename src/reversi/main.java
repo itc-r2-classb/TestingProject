@@ -3,7 +3,7 @@ package reversi;
 import lib.Utility;
 
 public class main {
-	private static final Stone w = Stone.WHITE, b = Stone.BLACK, n = Stone.NONE;
+	private static final Stone w = Stone.WHITE, b = Stone.BLACK, n = Stone.NONE, d = Stone.NOT_PLACE;
 	
 	public static void main(String[] args) {
 

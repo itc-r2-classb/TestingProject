@@ -142,11 +142,11 @@ public class Board {
 		for (int i = 1; i <= Math.min(maxY, x); i++) {
 			cx = x - i;
 			cy = y + i;
-			System.out.println((cx+1) + ", " + (cy+1) + ": " + get(cx, cy));
+//			System.out.println((cx+1) + ", " + (cy+1) + ": " + get(cx, cy));
 			if (!get(cx, cy).equals(Stone.NONE) && !get(cx, cy).equals(Stone.NOT_PLACE) && !get(cx, cy).equals(stone)) {
 				tmp.add(new Location(cx, cy));
 			}
-			System.out.println((cx+1) + ", " + (cy+1) + ": " + get(cx, cy) + " == " + stone);
+//			System.out.println((cx+1) + ", " + (cy+1) + ": " + get(cx, cy) + " == " + stone);
 			if (get(cx, cy).equals(stone)) {
 				copy = true;
 				break;
